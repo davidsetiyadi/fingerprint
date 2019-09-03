@@ -1,0 +1,20 @@
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment.CaptureForm.resources
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment.EnrollmentForm.resources
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment.MainForm.resources
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment.Properties.Resources.resources
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment.VerificationForm.resources
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment CS.csproj.GenerateResource.Cache
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\Mono.Security.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\Npgsql.xml
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\de\Npgsql.resources.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\es\Npgsql.resources.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\SGEEDE_Fingerprint.exe
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\bin\Debug\SGEEDE_Fingerprint.pdb
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\SGEEDE_Fingerprint.exe
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\SGEEDE_Fingerprint.pdb
+C:\Users\HP\Documents\Visual Studio 2008\Enrollment\obj\Debug\Enrollment.Confirmation_form.resources
