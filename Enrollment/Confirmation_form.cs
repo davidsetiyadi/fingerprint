@@ -46,7 +46,7 @@ namespace Enrollment
         private void Confirmation_form_Load(object sender, EventArgs e)
         {
             //System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["CaptureForm"];
-            //string connstring = "Server=206.189.159.57;Username=sgeede_fingerprint;Password=we@re$g33d3;Database=SERENITY_PRODUCTION";
+            //string connstring = "Server=206.189.159.57;Username=sgeede_fingerprint;Password=;Database=SERENITY_PRODUCTION";
             //string connstring = "Server=192.168.100.20;Username=postgres;Password=postgres;Database=Serenity";
             string connstring = "Server=localhost;Username=postgres;Password=postgres;Database=SERENITY_PRODUCTION";
             // Making connection with Npgsql provider
