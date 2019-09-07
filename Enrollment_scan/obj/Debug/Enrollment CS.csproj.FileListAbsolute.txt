@@ -41,3 +41,5 @@ C:\Users\HP\Documents\Visual Studio 2008\Enrollment_scan\obj\Debug\Enrollment CS
 C:\Users\HP\Documents\Visual Studio 2008\Enrollment_scan\obj\Debug\SGEEDE_Fingerprint_scan.exe
 C:\Users\HP\Documents\Visual Studio 2008\Enrollment_scan\obj\Debug\SGEEDE_Fingerprint_scan.pdb
 C:\Users\HP\Documents\Visual Studio 2008\Enrollment_scan\obj\Debug\Enrollment.ConfirmationForm.resources
+D:\Shared\fingerprint\Enrollment_scan\obj\Debug\SGEEDE_Fingerprint_scan.exe
+D:\Shared\fingerprint\Enrollment_scan\obj\Debug\SGEEDE_Fingerprint_scan.pdb

@@ -62,7 +62,7 @@ namespace Enrollment
                 
                 //Indexes , 
                 //string connstring = "Host=192.168.100.20;Username=postgres;Password=postgres;Database=Serenity";
-                string connstring = "Host=206.189.159.57;Username=sgeede_fingerprint;Password=we@re$g33d3;Database=SERENITY_PRODUCTION";
+                string connstring = "Host=localhost;Username=sgeede_fingerprint;Password=;Database=SERENITY_PRODUCTION";
                 // Making connection with Npgsql provider
                 NpgsqlConnection conn = new NpgsqlConnection(connstring);
                 conn.Open();
