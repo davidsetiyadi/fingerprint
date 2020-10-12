@@ -33,6 +33,8 @@ namespace UareUSampleCSharp
         private int count;
         private DataSet ds = new DataSet();
         private DataTable dt = new DataTable();
+        private DataSet ds2 = new DataSet();
+        private DataTable dt2 = new DataTable();
         private string referral;
 
         public Identification()
@@ -98,7 +100,7 @@ namespace UareUSampleCSharp
                     anyFinger = resultConversion.Data;
                     count += 1;
                     count = 0;
-                    SendMessage(Action.SendMessage, "Press Sign In Button to Verify.");
+                    SendMessage(Action.SendMessage, "Press OK to Verify.");
 
                 }
                 else if (count == 1)
@@ -151,6 +153,8 @@ namespace UareUSampleCSharp
                     // data adapter making request from our connection
                     count = 0;
                 }
+
+                BtnTest_Click(this, new System.EventArgs());
             }
             catch (Exception ex)
             {
@@ -162,6 +166,11 @@ namespace UareUSampleCSharp
         /// <summary>
         /// Close window.
         /// </summary>
+        /// 
+        private void Identification_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
         private void btnBack_Click(System.Object sender, System.EventArgs e)
         {
             //this.Close();
@@ -249,11 +258,44 @@ namespace UareUSampleCSharp
                     throw new Exception(identifyResult.ResultCode.ToString());
                 }
 
-                SendMessage(Action.SendMessage, "Identification resulted in the following number of matches: " + identifyResult.Indexes.Length.ToString());
-                SendMessage(Action.SendMessage, "Place your right index finger on the reader.");
-                SendMessage(Action.SendMessage, dr["name"].ToString());
+                //SendMessage(Action.SendMessage, "Identification resulted in the following number of matches: " + identifyResult.Indexes.Length.ToString());
+                //SendMessage(Action.SendMessage, "Place your right index finger on the reader.");
+                SendMessage(Action.SendMessage, "Sign In "+dr["name"].ToString());
                 if (identifyResult.Indexes.Length.ToString() == "1")
                 {
+                    //=============================================check sign in====================
+                    string conn2string = "Host=192.168.56.102;Username=david;Password=david;Database=CHOCO";
+                    // Making connection with Npgsql provider
+                    NpgsqlConnection conn3 = new NpgsqlConnection(conn2string);
+                    conn3.Open();
+                    string sql2 = "select id,fingerprint,name from hr_employee where fingerprint is not null;";
+                    // data adapter making request from our connection
+                    NpgsqlDataAdapter da2 = new NpgsqlDataAdapter(sql2, conn3);
+
+                    ds2.Reset();
+                    // filling DataSet with result from NpgsqlDataAdapter
+                    da2.Fill(ds2);
+                    // since it C# DataSet can handle multiple tables, we will select first
+                    dt2 = ds2.Tables[0];
+                    foreach (DataRow dr2 in dt2.Rows)
+                    {
+                        DialogResult d;
+                        d = MessageBox.Show("Anda telah melakukan Sign In", "Learn C#", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (d == DialogResult.Yes)
+                        {
+                            //break;
+                            conn3.Close();
+                            goto AfterLoop;
+                        }
+                        else
+                        {
+                            //break;
+                            conn3.Close();
+                            goto AfterLoop;
+                        }
+                        break;
+                    }
+                    //=============================================
                     MessageBox.Show(dr["name"].ToString());
 
                     string connstring2 = "Host=192.168.56.102;Username=david;Password=david;Database=CHOCO";
@@ -276,10 +318,11 @@ namespace UareUSampleCSharp
                         //cmd.CommandText = "update hr_employee set is_helper = true where id = 1";
                         cmd.ExecuteNonQuery();
                     }
-                    conn2.Close();
-                    
+                
+                
+                    conn2.Close();                    
                     //MyMain();
-                    conn.Close();
+                    conn.Close();                    
                     break;                  
 
                 }              
@@ -287,6 +330,12 @@ namespace UareUSampleCSharp
             }
 
             conn.Close();
+            AfterLoop:
+                Console.WriteLine("\nDone!");
+                //MessageBox.Show("suksesss");
+                //conn.Close();
+                //conn2.Close();
+                //conn3.Close();
         }
         //using var client = new HttpClient();
         static async Task MyMain()

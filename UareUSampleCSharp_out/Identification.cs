@@ -76,6 +76,11 @@ namespace UareUSampleCSharp
         /// Handler for when a fingerprint is captured.
         /// </summary>
         /// <param name="captureResult">contains info and data on the fingerprint capture</param>
+        private void Identification_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
         private void OnCaptured(CaptureResult captureResult)
         {
             try
@@ -98,7 +103,7 @@ namespace UareUSampleCSharp
                     anyFinger = resultConversion.Data;
                     count += 1;
                     count = 0;
-                    SendMessage(Action.SendMessage, "Press Sign Out Button to Verify.");
+                    SendMessage(Action.SendMessage, "Press Ok Button to Verify.");
 
                 }
                 else if (count == 1)
@@ -151,6 +156,7 @@ namespace UareUSampleCSharp
                     // data adapter making request from our connection
                     count = 0;
                 }
+                BtnTest_Click(this, new System.EventArgs());
             }
             catch (Exception ex)
             {
@@ -249,9 +255,9 @@ namespace UareUSampleCSharp
                     throw new Exception(identifyResult.ResultCode.ToString());
                 }
 
-                SendMessage(Action.SendMessage, "Identification resulted in the following number of matches: " + identifyResult.Indexes.Length.ToString());
-                SendMessage(Action.SendMessage, "Place your right index finger on the reader.");
-                SendMessage(Action.SendMessage, dr["name"].ToString());
+                //SendMessage(Action.SendMessage, "Identification resulted in the following number of matches: " + identifyResult.Indexes.Length.ToString());
+                //SendMessage(Action.SendMessage, "Place your right index finger on the reader.");
+                SendMessage(Action.SendMessage, "Sign Out " + dr["name"].ToString());
                 if (identifyResult.Indexes.Length.ToString() == "1")
                 {
                     MessageBox.Show(dr["name"].ToString());
